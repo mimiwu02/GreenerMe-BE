@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-devise_for :users
+# devise_for :users
 #root
 root "welcome#index"
 
 #GreenerMe routes
-get     "/green"           => "green#index"
-get     "/green/:zip"      => "green#show"
-post    "/green/new"       => "green#create"
-put     "/unicorns/:zip"   => "green#update"
-delete  "/unicorns/:zip"   => "green#destroy"
+get     "/messages"           => "messages#index"
+get     "/messages/:zip"      => "messages#show"
+post    "/messages/new"       => "messages#create"
+put     "/messages/:name"      => "messages#update"
+delete  "/messages/:name"      => "messages#destroy"
 end
