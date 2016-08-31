@@ -6,8 +6,8 @@ root "welcome#index"
 
 #GreenerMe routes
 get     "/messages"           => "messages#index"
-get     "/messages/:zip"      => "messages#show"
+get     "/messages/:name"      => "messages#show"
 post    "/messages/new"       => "messages#create"
-put     "/messages/:name"      => "messages#update"
-delete  "/messages/:name"      => "messages#destroy"
+put     "/messages/:id"      => "messages#update"
+delete  "/messages/:id"      => "messages#destroy"
 end

@@ -20,7 +20,8 @@ class MessagesController < ApplicationController
   end
 
   def update
-    found_message = Message.where(name: params[:name])
+    puts "params:", params
+    found_message = Message.where(id: params[:id])
     updated = found_message.update(name: params[:name], email: params[:email], zip: params[:zip], title: params[:title], content: params[:content])
 
     if updated
@@ -31,7 +32,7 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    Message.delete_all(name: params[:name])
+    Message.delete_all(id: params[:id])
     render json: {'Messages controller': 'Post removed'}
   end
 
