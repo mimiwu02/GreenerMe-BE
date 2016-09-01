@@ -5,9 +5,15 @@ class MessagesController < ApplicationController
   end
 
   def show
-    message = Message.where(zip: params[:name])
+    message = Message.where(name: params[:name])
     render json: message
   end
+
+  def zip
+    message = Message.where(zip: params[:zip])
+    render json: message
+  end
+
 
   def create
     new_message = Message.new(name: params[:name], email: params[:email], zip: params[:zip], title: params[:title], content: params[:content])
